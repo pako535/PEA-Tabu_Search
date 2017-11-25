@@ -8,7 +8,7 @@ def creatematrix_TSP():
 
 
 
-    file = 'gr17.tsp'
+    file = 'tsp/gr17.tsp'
     tekst = open(file).read()
     # print(tekst)
     tekst = tekst.split()
@@ -46,17 +46,17 @@ def creatematrix_TSP():
         if k == False:
              counter += 1
 
-    for i in range(dimension):
-        tab[0, 1 + i:] = i
-        tab[1 + i:, 0] = i
-
-        tab[0][0] = -2
+    # for i in range(dimension):
+    #     tab[0, 1 + i:] = i
+    #     tab[1 + i:, 0] = i
+    #
+    #     tab[0][0] = -2
     #print(tab)
     return tab
 
 
 def creatematrix_ATSP():
-    file = 'br17.atsp'
+    file = 'atsp/br17.atsp'
     tekst = open(file).read()
 
     #print(tekst)
@@ -71,7 +71,7 @@ def creatematrix_ATSP():
     dimension = dimension[11:]
     dimension = int(dimension)
 
-    tab = zeros((dimension + 1, dimension + 1), int)
+    tab = zeros((dimension, dimension), int)
     # print(tab)
 
     # wpisywanie do macierzy odległosci jako int a nie str
@@ -83,14 +83,14 @@ def creatematrix_ATSP():
         for j in range(dimension):
             if tekst[counter] =='9999': # '9999':100000000
                 tekst[counter] = infinity
-            tab[i+1][j+1] = int(tekst[counter])
+            tab[i][j] = int(tekst[counter])
             counter += 1
 
-    for i in range(dimension):
-        tab[0, 1+i:] = i
-        tab[1+i :,0] = i
-
-    tab[0][0] = -2
+    # for i in range(dimension):
+    #     tab[0, 1+i:] = i
+    #     tab[1+i :,0] = i
+    #
+    # tab[0][0] = -2
     #print(tab)
 
 
