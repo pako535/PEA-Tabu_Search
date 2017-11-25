@@ -5,6 +5,7 @@ class Tabu:
         self.tab = tab
         self.tabuList = tabulist.TabuList(lenTabu, cadency)
         self.select_start_point(self.tab)
+        print("Lista tabu: ", self.tabuList.TList)
 
     def select_start_point(self, tab):
 
