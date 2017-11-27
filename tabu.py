@@ -6,8 +6,13 @@ class Tabu:
         self.tabuList = tabulist.TabuList(lenTabu, cadency)
         self.select_start_point(self.tab)
         print("Lista tabu: ", self.tabuList.TList)
+        self.find_neighborhood(tab)
 
-    def select_start_point(self, tab):
+    def run(self):
+        pass
+
+    @staticmethod
+    def select_start_point(tab):
 
         x0 = []
         value_of_x0 = 0
@@ -26,3 +31,14 @@ class Tabu:
         print("Wartość ścieżki: ", value_of_x0)
 
 
+    def find_neighborhood(self, tab):
+        list_of_move = []
+        for i in range(len(tab)):
+            for j in range(len(tab)):
+                if i != j:
+                    tmp = tabulist.Move(j, i)
+                    if tmp not in list_of_move: #or tabulist.Move(i, j) in self.tabuList:
+                        list_of_move.append(tabulist.Move(i, j))
+
+
+        print(list_of_move)
