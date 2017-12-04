@@ -19,7 +19,7 @@ class Tabu:
         x0 = self.select_start_point(self.tab)
         xopt = x0
         # while(True):
-        for i in range(100000):
+        for i in range(30000):
             resultOfNeighbor = self.find_neighbor(x0)
             if resultOfNeighbor != False:
                 x0 = resultOfNeighbor[0]
@@ -30,16 +30,18 @@ class Tabu:
 
                 # try:
                 self.verify_tabuList(resultOfNeighbor[2])
-                print("Ścieżka: ", resultOfNeighbor[0], "\nWartość: ", resultOfNeighbor[1])
+               # print("Ścieżka: ", resultOfNeighbor[0], "\nWartość: ", resultOfNeighbor[1])
                 # except:
                 #     print("Ścieżka ta sama: ", resultOfNeighbor[1])
 
             # CriticalEvent
             else:
                 x0 = self.generateNewSolution()
+                if self.valueOfPath(xopt) < self.valueOfPath(xopt):
+                    xopt = x0
 
 
-        print("WYNIK: ", self.valueOfPath(xopt), " dla ścieżki: ", xopt)
+        print("\n\nWYNIK: ", self.valueOfPath(xopt), " dla ścieżki: ", xopt)
 
 
             
@@ -65,8 +67,8 @@ class Tabu:
 
 
 
-        print("Ścieżka: ", x0)
-        print("Wartość ścieżki: ", value_of_x0)
+        print("Ścieżka początkowa: ", x0)
+        print("Wartość ścieżki początkowej: ", value_of_x0)
         return x0
 
     def find_neighbor(self, x0):
@@ -96,6 +98,7 @@ class Tabu:
 
                             # SWAP
                             #positions = random.sample(range(dl), 2)
+                            tmp_path = copy.copy(x0)
                             tmp = tmp_path[i]
                             tmp_path[i] = tmp_path[j]
                             tmp_path[j] = tmp
@@ -140,7 +143,7 @@ class Tabu:
         # jesli kadencja = 0 to usun z tabuList
         self.tabuList.TList[:] = [x for x in self.tabuList.TList if x.cadency != 0]
 
-        print(self.tabuList.TList)
+        #print(self.tabuList.TList)
 
     def criticalEvent(self, x0):
         if x0 == self.currentSolution:
@@ -155,6 +158,7 @@ class Tabu:
     def generateNewSolution(self):
 
         newSolution = []
+        oldSolution = []
         listOfVertices = []
         for i in range(len(self.tab)):
             listOfVertices.append(i)
@@ -163,9 +167,23 @@ class Tabu:
             x = random.choice(listOfVertices)
             index = listOfVertices.index(x)
             listOfVertices.pop(index)
-            newSolution.append(x)
+            oldSolution.append(x)
 
-        return newSolution
+        # for k in range(10):
+        #     newSolution = []
+        #     for i in range(len(self.tab)):
+        #         listOfVertices.append(i)
+        #
+        #     for i in range(len(self.tab)):
+        #         x = random.choice(listOfVertices)
+        #         index = listOfVertices.index(x)
+        #         listOfVertices.pop(index)
+        #         newSolution.append(x)
+        #
+        #     if self.valueOfPath(newSolution) < self.valueOfPath(oldSolution):
+        #         oldSolution = newSolution
+
+        return oldSolution
 
     def valueOfPath(self, x0):
         tmp_value = 0
