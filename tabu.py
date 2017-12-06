@@ -16,7 +16,7 @@ class Tabu:
 
     def run(self):
 
-        x0 = self.select_start_point(self.tab)
+        x0 = self.select_start_point()
         xopt = x0
         # while(True):
         for i in range(30000):
@@ -46,25 +46,54 @@ class Tabu:
 
             
 
-    @staticmethod
-    def select_start_point(tab):
+
+    def select_start_point(self):
 
         x0 = []
         value_of_x0 = 0
-        dl = len(tab)
-
+        # dl = len(tab)
+        #
+        # # for i in range(dl):
+        # #     value_of_x0 += min(filter(lambda x: x >= 0, tab[i, :]))
+        #
+        #
         # for i in range(dl):
-        #     value_of_x0 += min(filter(lambda x: x >= 0, tab[i, :]))
+        #     try:
+        #         value_of_x0 += tab[i][i + 1]
+        #         x0.append(i)
+        #     except:
+        #         value_of_x0 += tab[dl - 1][0]
+        #         x0.append(dl - 1)
 
+        listOfVertices = []
 
-        for i in range(dl):
-            try:
-                value_of_x0 += tab[i][i + 1]
+        for i in range(len(self.tab)):
+            listOfVertices.append(i)
+
+        for i in range(len(listOfVertices) - 1):
+            if not x0:
+                value = min(filter(lambda x: x >= 0, self.tab[i, :]))
+                value_of_x0 += value
+                id = self.tab[i, :].tolist()
+                id = id.index(value)
+                #listOfVertices.pop(id)
                 x0.append(i)
-            except:
-                value_of_x0 += tab[dl - 1][0]
-                x0.append(dl - 1)
+                x0.append(id)
+            else:
 
+                 newlist = self.tab[x0[len(x0) - 1], :].tolist()
+                 mini = max(newlist)
+                 for i in range(len(newlist)):
+                    if i not in x0:
+                        if newlist[i] < mini:
+                            mini = newlist[i]
+                            id = i
+
+                 #listOfVertices.pop(id)
+                 value_of_x0 += mini
+                 x0.append(id)
+
+        value_of_x0 += self.tab[x0[len(x0) - 1]][0]
 
 
         print("Ścieżka początkowa: ", x0)
