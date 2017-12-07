@@ -21,21 +21,21 @@ class Tabu:
         # while(True):
         for i in range(30000):
             resultOfNeighbor = self.find_neighbor(x0)
-            if resultOfNeighbor != False:
-                x0 = resultOfNeighbor[0]
 
-                if resultOfNeighbor[1] < self.valueOfPath(xopt):
-                    xopt = x0
+            x0 = resultOfNeighbor[0]
+
+            if resultOfNeighbor[1] < self.valueOfPath(xopt):
+                xopt = x0
 
 
                 # try:
-                self.verify_tabuList(resultOfNeighbor[2])
+            self.verify_tabuList(resultOfNeighbor[2])
                # print("Ścieżka: ", resultOfNeighbor[0], "\nWartość: ", resultOfNeighbor[1])
                 # except:
                 #     print("Ścieżka ta sama: ", resultOfNeighbor[1])
 
             # CriticalEvent
-            else:
+            if resultOfNeighbor[2] == tabulist.Move(None, None, self.cadency):
                 x0 = self.generateNewSolution()
                 if self.valueOfPath(xopt) < self.valueOfPath(xopt):
                     xopt = x0
@@ -102,6 +102,8 @@ class Tabu:
 
     def find_neighbor(self, x0):
         value_of_x0 = 0
+        tmp_x0 = copy.copy(x0)
+        move = tabulist.Move(None, None, self.cadency)
         dl = len(x0)
         # Obliczenie wartości cieżki początkowej
         for i in range(len(x0)):
@@ -114,42 +116,48 @@ class Tabu:
         tmp_path = copy.copy(x0)
 
         # Znalezienie lepszej scieżki i wyyliczenie jej wartosci
-        while(True):
-            tmp_value = 0
+       # while(True):
+        tmp_value = 0
             #list_of_move = []
-            for i in range(len(self.tab)):
-                flag = False
-                for j in range(len(self.tab)):
-                    if i != j:
-                        tmp = tabulist.Move(i, j)
-                        #if tmp not in list_of_move and tmp not in self.tabuList.TList:     # dopisac czy nie ma na tabu
-                        if tmp not in self.tabuList.TList:
+        for i in range(len(self.tab)):
+            flag = False
+            for j in range(len(self.tab)):
+                if i != j:
+                    tmp = tabulist.Move(i, j)
+                    #if tmp not in list_of_move and tmp not in self.tabuList.TList:     # dopisac czy nie ma na tabu
+                    if tmp not in self.tabuList.TList:
 
-                            # SWAP
-                            #positions = random.sample(range(dl), 2)
-                            tmp_path = copy.copy(x0)
-                            tmp = tmp_path[i]
-                            tmp_path[i] = tmp_path[j]
-                            tmp_path[j] = tmp
-                            tmp_value = 0
+                        # SWAP
+                        #positions = random.sample(range(dl), 2)
+                        tmp_path = copy.copy(x0)
+                        tmp = tmp_path[i]
+                        tmp_path[i] = tmp_path[j]
+                        tmp_path[j] = tmp
+                        tmp_value = 0
 
-                            for k in range(len(tmp_path)):
+                        for k in range(len(tmp_path)):
 
-                                try:
-                                    tmp_value += self.tab[tmp_path[k]][tmp_path[k + 1]]
-                                except:
-                                    tmp_value += self.tab[tmp_path[dl - 1]][tmp_path[0]]
-                            if tmp_value < value_of_x0:
-                                flag = True
-                                break
-                        if flag == True:
-                            break
-                if flag == True:
-                    break
-            if tmp_value < value_of_x0:
-                return tmp_path, tmp_value, tabulist.Move(i, j, self.cadency)
-            else:
-                return False
+                            try:
+                                tmp_value += self.tab[tmp_path[k]][tmp_path[k + 1]]
+                            except:
+                                tmp_value += self.tab[tmp_path[dl - 1]][tmp_path[0]]
+                        if tmp_value < value_of_x0:
+                            tmp_x0 = tmp_path
+                            value_of_x0 = tmp_value
+                            move = tabulist.Move(i, j, self.cadency)
+
+        return tmp_x0, tmp_value, move
+
+                #         if flag == True:
+                #             break
+                # if flag == True:
+                #     break
+            # if tmp_value < value_of_x0:
+            #     tmp_x0 = tmp_path
+            #     value_of_x0 = tmp_value
+            #     return tmp_path, tmp_value, tabulist.Move(i, j, self.cadency)
+            # else:
+            #     return False
 
     def verify_tabuList(self, move):
 
