@@ -19,7 +19,7 @@ class Tabu:
         x0 = self.select_start_point()
         xopt = x0
         # while(True):
-        for i in range(30000):
+        for i in range(10000):
             resultOfNeighbor = self.find_neighbor(x0)
 
             x0 = resultOfNeighbor[0]
@@ -142,11 +142,11 @@ class Tabu:
                             except:
                                 tmp_value += self.tab[tmp_path[dl - 1]][tmp_path[0]]
                         if tmp_value < value_of_x0:
-                            tmp_x0 = tmp_path
-                            value_of_x0 = tmp_value
-                            move = tabulist.Move(i, j, self.cadency)
-
-        return tmp_x0, tmp_value, move
+                            # tmp_x0 = tmp_path
+                            # value_of_x0 = tmp_value
+                            # move = tabulist.Move(i, j, self.cadency)
+                            return tmp_path, tmp_value, tabulist.Move(i, j, self.cadency)
+        return tmp_x0, value_of_x0, tabulist.Move(None, None, self.cadency)
 
                 #         if flag == True:
                 #             break
