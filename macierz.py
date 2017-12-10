@@ -56,7 +56,7 @@ def creatematrix_TSP():
 
 
 def creatematrix_ATSP():
-    file = 'atsp/ftv70.atsp'
+    file = 'atsp/' + 'ftv70.atsp'
     tekst = open(file).read()
 
     #print(tekst)

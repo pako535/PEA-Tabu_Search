@@ -13,7 +13,7 @@ start = time.clock()
 int = random.randint(0, 100)
 
 print(tab, "\n\n")
-TS = tabu.Tabu(tab, 7)
+TS = tabu.Tabu(tab, 210)
 
 
 end = time.clock()
