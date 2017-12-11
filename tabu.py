@@ -3,8 +3,8 @@ import random
 import copy
 class Tabu:
 
-    def __init__(self, tab, cadency):
-
+    def __init__(self, tab, cadency,iteracje):
+        self.iteracje = iteracje
         self.currentSolution = 0
         self.tab = tab
         self.cadency = cadency
@@ -12,14 +12,15 @@ class Tabu:
         #self.select_start_point(self.tab)
         print("Lista tabu: ", self.tabuList.TList)
         # self.find_neighborhood(tab)
-        self.run()
+        self.www = self.run()
+
 
     def run(self):
 
         x0 = self.select_start_point()
         xopt = x0
         # while(True):
-        for i in range(10000):
+        for i in range(self.iteracje):
             resultOfNeighbor = self.find_neighbor(x0)
 
             x0 = resultOfNeighbor[0]
@@ -42,7 +43,7 @@ class Tabu:
 
 
         print("\n\nWYNIK: ", self.valueOfPath(xopt), " dla ścieżki: ", xopt)
-
+        return self.valueOfPath(xopt)
 
             
 

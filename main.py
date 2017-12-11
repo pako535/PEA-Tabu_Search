@@ -2,6 +2,7 @@ import macierz
 import tabu
 import random
 import time
+import  tests
 
 
 

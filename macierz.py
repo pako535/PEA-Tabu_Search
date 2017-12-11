@@ -55,8 +55,8 @@ def creatematrix_TSP():
     return tab
 
 
-def creatematrix_ATSP():
-    file = 'atsp/' + 'ftv70.atsp'
+def creatematrix_ATSP(sciezka):
+    file = 'atsp/' + sciezka      # + 'ftv70.atsp'
     tekst = open(file).read()
 
     #print(tekst)
