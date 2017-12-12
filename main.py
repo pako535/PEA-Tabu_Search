@@ -8,13 +8,13 @@ import  tests
 
 
 
+#tab = macierz.creatematrix_TSP('gr17.tsp')
 tab = macierz.creatematrix_ATSP('ftv70.atsp')
-
 start = time.clock()
 int = random.randint(0, 100)
 
 print(tab, "\n\n")
-TS = tabu.Tabu(tab, 7, 100000)
+TS = tabu.Tabu(tab, 7, 1000)
 
 
 end = time.clock()

@@ -10,7 +10,7 @@ def creatematrix_TSP(sciezka):
     tekst = open(file).read()
     # print(tekst)
     tekst = tekst.split()
-    tekst = tekst[19:]
+    tekst = tekst[15:]
     # print(tekst)
 
     dl = len(tekst)
@@ -60,7 +60,7 @@ def creatematrix_ATSP(sciezka):
     #print(tekst)
     tekst = tekst.split()
     #print(tekst)
-    tekst = tekst[16:]
+    tekst = tekst[15:]
     #print(tekst)
 
     dl = len(tekst)
@@ -79,7 +79,7 @@ def creatematrix_ATSP(sciezka):
 
     for i in range(dimension):
         for j in range(dimension):
-            if tekst[counter] =='9999': # '9999':100000000
+            if tekst[counter] =='100000000': # '9999':100000000
                 tekst[counter] = infinity
             tab[i][j] = int(tekst[counter])
             counter += 1

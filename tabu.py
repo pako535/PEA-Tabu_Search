@@ -21,7 +21,7 @@ class Tabu:
         xopt = x0
         # while(True):
         for i in range(self.iteracje):
-            resultOfNeighbor = self.find_neighbor(x0)
+            resultOfNeighbor = self.find_neighbor(x0, xopt, i)
 
             x0 = resultOfNeighbor[0]
 
@@ -52,19 +52,7 @@ class Tabu:
 
         x0 = []
         value_of_x0 = 0
-        # dl = len(tab)
-        #
-        # # for i in range(dl):
-        # #     value_of_x0 += min(filter(lambda x: x >= 0, tab[i, :]))
-        #
-        #
-        # for i in range(dl):
-        #     try:
-        #         value_of_x0 += tab[i][i + 1]
-        #         x0.append(i)
-        #     except:
-        #         value_of_x0 += tab[dl - 1][0]
-        #         x0.append(dl - 1)
+
 
         listOfVertices = []
 
@@ -101,7 +89,7 @@ class Tabu:
         print("Wartość ścieżki początkowej: ", value_of_x0)
         return x0
 
-    def find_neighbor(self, x0):
+    def find_neighbor(self, x0, xopt, iteracja):
         value_of_x0 = 0
         tmp_x0 = copy.copy(x0)
         move = tabulist.Move(None, None, self.cadency)
@@ -143,30 +131,16 @@ class Tabu:
                             except:
                                 tmp_value += self.tab[tmp_path[dl - 1]][tmp_path[0]]
                         if tmp_value < value_of_x0:
-                            # tmp_x0 = tmp_path
-                            # value_of_x0 = tmp_value
-                            # move = tabulist.Move(i, j, self.cadency)
+
+                            #if tmp_value <  self.valueOfPath(xopt):
+                            print("Polepszona ścieżka: ", tmp_path,"\nPolepszony wynik: ",tmp_value, "\nW iteracji: ", iteracja)
                             return tmp_path, tmp_value, tabulist.Move(i, j, self.cadency)
         return tmp_x0, value_of_x0, tabulist.Move(None, None, self.cadency)
 
-                #         if flag == True:
-                #             break
-                # if flag == True:
-                #     break
-            # if tmp_value < value_of_x0:
-            #     tmp_x0 = tmp_path
-            #     value_of_x0 = tmp_value
-            #     return tmp_path, tmp_value, tabulist.Move(i, j, self.cadency)
-            # else:
-            #     return False
 
     def verify_tabuList(self, move):
 
-        # dodaj element do tabuList
-        # for i in range(len(self.tabuList.TList)):
-        #     if self.tabuList.TList[i] == tabulist.Move(None, None, None):
-        #         self.tabuList.TList[i] = move
-        #         break
+
         dl = len(self.tabuList.TList)
         if move != tabulist.Move(None,None,None):
             self.tabuList.TList.append(move)
