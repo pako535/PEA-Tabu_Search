@@ -1,0 +1,3 @@
+ftv47.atsp  najlepszy znaleziony wynik: 2289.0 3.482380376679245s kedencje 1 iteracje 1000
+ftv47.atsp  najlepszy znaleziony wynik: 2256.66666667 18.298533783130107s kedencje 1 iteracje 5000
+ftv47.atsp  najlepszy znaleziony wynik: 2177.33333333 35.70765747996626s kedencje 1 iteracje 10000

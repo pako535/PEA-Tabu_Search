@@ -1,0 +1,1 @@
+ftv170.atsp  najlepszy znaleziony wynik: 3822 72.11781462950017s kedencje 1 iteracje 1000ftv170.atsp  najlepszy znaleziony wynik: 3822 433.0493831986396s kedencje 1 iteracje 5000ftv170.atsp  najlepszy znaleziony wynik: 3822 831.6670506665196s kedencje 1 iteracje 10000

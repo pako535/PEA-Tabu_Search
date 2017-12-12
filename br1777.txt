@@ -1,0 +1,1 @@
+br17.atsp  najlepszy znaleziony wynik: 39 0.46981500557987815s kedencje 1 iteracje 1000br17.atsp  najlepszy znaleziony wynik: 39 2.5312243233631335s kedencje 1 iteracje 5000br17.atsp  najlepszy znaleziony wynik: 39 4.396843536539004s kedencje 1 iteracje 10000

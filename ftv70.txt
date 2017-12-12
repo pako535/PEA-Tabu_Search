@@ -1,0 +1,9 @@
+ftv70.atsp  najlepszy znaleziony wynik: 2433.0 11.405402864331487s kedencje 3 iteracje 1000
+ftv70.atsp  najlepszy znaleziony wynik: 2433.0 58.357138039361416s kedencje 3 iteracje 5000
+ftv70.atsp  najlepszy znaleziony wynik: 2433.0 118.25763799609877s kedencje 3 iteracje 10000
+ftv70.atsp  najlepszy znaleziony wynik: 2433.0 15.476781554691115s kedencje 2 iteracje 1000
+ftv70.atsp  najlepszy znaleziony wynik: 2433.0 69.14207130919749s kedencje 2 iteracje 5000
+ftv70.atsp  najlepszy znaleziony wynik: 2433.0 142.16739123177436s kedencje 2 iteracje 10000
+ftv70.atsp  najlepszy znaleziony wynik: 2433.0 19.578929820402056s kedencje 1 iteracje 1000
+ftv70.atsp  najlepszy znaleziony wynik: 2433.0 94.93940768931513s kedencje 1 iteracje 5000
+ftv70.atsp  najlepszy znaleziony wynik: 2433.0 190.37426717410062s kedencje 1 iteracje 10000

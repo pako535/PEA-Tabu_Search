@@ -1,0 +1,3 @@
+gr120.tsp  najlepszy znaleziony wynik: 8789 50.12874163529261s kedencje 1 iteracje 1000
+gr120.tsp  najlepszy znaleziony wynik: 8789 232.05033642781518s kedencje 1 iteracje 5000
+gr120.tsp  najlepszy znaleziony wynik: 8789 475.20379738297584s kedencje 1 iteracje 10000

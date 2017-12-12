@@ -1,0 +1,9 @@
+gr24.tsp  najlepszy znaleziony wynik: 1352.0 0.9402934676044102s kedencje 3 iteracje 1000
+gr24.tsp  najlepszy znaleziony wynik: 1318.33333333 4.834269272512103s kedencje 3 iteracje 5000
+gr24.tsp  najlepszy znaleziony wynik: 1303.33333333 9.496560700297115s kedencje 3 iteracje 10000
+gr24.tsp  najlepszy znaleziony wynik: 1342.0 1.0208886465723357s kedencje 2 iteracje 1000
+gr24.tsp  najlepszy znaleziony wynik: 1312.0 5.113440853072362s kedencje 2 iteracje 5000
+gr24.tsp  najlepszy znaleziony wynik: 1299.33333333 10.543745490629712s kedencje 2 iteracje 10000
+gr24.tsp  najlepszy znaleziony wynik: 1367.33333333 1.3521223762192751s kedencje 1 iteracje 1000
+gr24.tsp  najlepszy znaleziony wynik: 1319.33333333 6.696294208861436s kedencje 1 iteracje 5000
+gr24.tsp  najlepszy znaleziony wynik: 1327.66666667 13.252477726521136s kedencje 1 iteracje 10000

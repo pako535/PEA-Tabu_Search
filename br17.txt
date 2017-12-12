@@ -1,0 +1,9 @@
+br17.atsp  najlepszy znaleziony wynik: 40 0.4264125471632554s kedencje 3 iteracje 1000
+br17.atsp  najlepszy znaleziony wynik: 39 2.133404819134281s kedencje 3 iteracje 5000
+br17.atsp  najlepszy znaleziony wynik: 39 4.463900692477179s kedencje 3 iteracje 10000
+br17.atsp  najlepszy znaleziony wynik: 39 0.48193948795931796s kedencje 2 iteracje 1000
+br17.atsp  najlepszy znaleziony wynik: 39 2.143641493853959s kedencje 2 iteracje 5000
+br17.atsp  najlepszy znaleziony wynik: 39 4.453239395165742s kedencje 2 iteracje 10000
+br17.atsp  najlepszy znaleziony wynik: 39 0.5951767778963237s kedencje 1 iteracje 1000
+br17.atsp  najlepszy znaleziony wynik: 39 2.92263361048772s kedencje 1 iteracje 5000
+br17.atsp  najlepszy znaleziony wynik: 39 5.667621173286893s kedencje 1 iteracje 10000

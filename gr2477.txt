@@ -1,0 +1,3 @@
+gr24.tsp  najlepszy znaleziony wynik: 1366 0.8161537471027556s kedencje 1 iteracje 1000
+gr24.tsp  najlepszy znaleziony wynik: 1345 4.586983503591153s kedencje 1 iteracje 5000
+gr24.tsp  najlepszy znaleziony wynik: 1283 8.746042476566556s kedencje 1 iteracje 10000
