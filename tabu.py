@@ -132,8 +132,8 @@ class Tabu:
                                 tmp_value += self.tab[tmp_path[dl - 1]][tmp_path[0]]
                         if tmp_value < value_of_x0:
 
-                            #if tmp_value <  self.valueOfPath(xopt):
-                            print("Polepszona ścieżka: ", tmp_path,"\nPolepszony wynik: ",tmp_value, "\nW iteracji: ", iteracja)
+                            if tmp_value <  self.valueOfPath(xopt):
+                                print("Polepszona ścieżka: ", tmp_path,"\nPolepszony wynik: ",tmp_value, "\nW iteracji: ", iteracja)
                             return tmp_path, tmp_value, tabulist.Move(i, j, self.cadency)
         return tmp_x0, value_of_x0, tabulist.Move(None, None, self.cadency)
 

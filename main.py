@@ -8,8 +8,8 @@ import  tests
 
 
 
-#tab = macierz.creatematrix_TSP('gr17.tsp')
-tab = macierz.creatematrix_ATSP('ftv70.atsp')
+tab = macierz.creatematrix_TSP('gr120.tsp')
+#tab = macierz.creatematrix_ATSP('atsp15.txt')
 start = time.clock()
 int = random.randint(0, 100)
 

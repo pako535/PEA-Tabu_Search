@@ -1,1 +1,9 @@
-ftv170.atsp  najlepszy znaleziony wynik: 3822 108.01018174460101s kedencje 3 iteracje 1000ftv170.atsp  najlepszy znaleziony wynik: 3822 554.4206080942979s kedencje 3 iteracje 5000ftv170.atsp  najlepszy znaleziony wynik: 3822 1284.3558488057427s kedencje 3 iteracje 10000ftv170.atsp  najlepszy znaleziony wynik: 3822 93.72001071009595s kedencje 2 iteracje 1000ftv170.atsp  najlepszy znaleziony wynik: 3822 739.5852019793238s kedencje 2 iteracje 5000ftv170.atsp  najlepszy znaleziony wynik: 3822 1507.7636865416612s kedencje 2 iteracje 10000ftv170.atsp  najlepszy znaleziony wynik: 3822 162.65634491413493s kedencje 1 iteracje 1000ftv170.atsp  najlepszy znaleziony wynik: 3822 992.0856202146924s kedencje 1 iteracje 5000ftv170.atsp  najlepszy znaleziony wynik: 3822 1985.1083646051775s kedencje 1 iteracje 10000
+ftv170.atsp  najlepszy znaleziony wynik: 3822 108.01018174460101s kedencje 3 iteracje 1000
+ftv170.atsp  najlepszy znaleziony wynik: 3822 554.4206080942979s kedencje 3 iteracje 5000
+ftv170.atsp  najlepszy znaleziony wynik: 3822 1284.3558488057427s kedencje 3 iteracje 10000
+ftv170.atsp  najlepszy znaleziony wynik: 3822 93.72001071009595s kedencje 2 iteracje 1000
+ftv170.atsp  najlepszy znaleziony wynik: 3822 739.5852019793238s kedencje 2 iteracje 5000
+ftv170.atsp  najlepszy znaleziony wynik: 3822 1507.7636865416612s kedencje 2 iteracje 10000
+ftv170.atsp  najlepszy znaleziony wynik: 3822 162.65634491413493s kedencje 1 iteracje 1000
+ftv170.atsp  najlepszy znaleziony wynik: 3822 992.0856202146924s kedencje 1 iteracje 5000
+ftv170.atsp  najlepszy znaleziony wynik: 3822 1985.1083646051775s kedencje 1 iteracje 10000
